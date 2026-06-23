@@ -1,0 +1,6 @@
+{
+  "name": "spotify",
+  "description": "Control Spotify and show now-playing in the statusline (macOS, AppleScript).",
+  "version": "0.1.0",
+  "author": { "name": "Oktay Furkan Uygur" }
+}

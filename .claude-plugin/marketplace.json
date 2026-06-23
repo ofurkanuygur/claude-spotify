@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "name": "Oktay's Plugins",
+  "description": "Personal Claude Code plugins",
+  "plugins": [
+    {
+      "name": "spotify",
+      "description": "Control Spotify and show now-playing in the statusline (macOS).",
+      "source": { "source": "github", "repo": "REPLACE_ME/claude-spotify" }
+    }
+  ]
+}
