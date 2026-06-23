@@ -1,0 +1,7 @@
+{
+  "modes": {
+    "focus": { "uri": "spotify:playlist:37i9dQZF1DWZeKCadgRdKQ", "volume": 40, "emoji": "🎯", "color": "blue" },
+    "chill": { "uri": "spotify:playlist:37i9dQZF1DX4WYpdgoIcn6", "volume": 60, "emoji": "🌙", "color": "cyan" }
+  },
+  "active": null
+}
