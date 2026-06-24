@@ -4,6 +4,16 @@
 
 spotify_config() { echo "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/spotify.json"; }
 
+# Escape a string for safe interpolation inside an AppleScript double-quoted
+# literal. Without this, a URI containing a double-quote can break out of the
+# literal and inject AppleScript (e.g. `do shell script`) → RCE.
+applescript_escape() {
+  local s=$1
+  s=${s//\\/\\\\}   # backslash first
+  s=${s//\"/\\\"}   # then double-quote
+  printf '%s' "$s"
+}
+
 # Map a color name to an ANSI SGR code. Unknown/empty → 35 (magenta).
 spotify_color_code() {
   case "$1" in

@@ -29,7 +29,10 @@ case "$cmd" in
   play)
     require_running
     [ -n "${1:-}" ] || { echo "Kullanım: /spotify play <spotify:uri>" >&2; exit 1; }
-    osa "play track \"$1\"" >/dev/null; now_playing ;;
+    osa "play track \"$(applescript_escape "$1")\"" >/dev/null
+    # ad-hoc play leaves any mode → clear active so the statusline falls back to 🎵
+    [ -f "$CONFIG" ] && { tmp=$(mktemp); jq '.active = null' "$CONFIG" > "$tmp" && mv "$tmp" "$CONFIG"; }
+    now_playing ;;
   vol)
     require_running
     { [[ "${1:-}" =~ ^[0-9]+$ ]] && [ "$1" -le 100 ]; } || { echo "Kullanım: /spotify vol <0-100>" >&2; exit 1; }
@@ -42,8 +45,8 @@ case "$cmd" in
       echo "Bilinmeyen mod: $name. Tanımlılar: $(list_modes "$CONFIG")" >&2; exit 1
     fi
     IFS=$'\t' read -r uri vol _emoji _color <<<"$resolved"
-    osa "play track \"$uri\"" >/dev/null
-    [ -n "$vol" ] && osa "set sound volume to $vol" >/dev/null
+    osa "play track \"$(applescript_escape "$uri")\"" >/dev/null
+    { [[ "$vol" =~ ^[0-9]+$ ]] && [ "$vol" -le 100 ]; } && osa "set sound volume to $vol" >/dev/null
     tmp=$(mktemp); jq --arg m "$name" '.active = $m' "$CONFIG" > "$tmp" && mv "$tmp" "$CONFIG"
     echo "Mod: $name"; now_playing ;;
   resolve) resolve_mode "$CONFIG" "${1:-}" ;;

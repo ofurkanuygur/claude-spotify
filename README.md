@@ -1,4 +1,3 @@
-````markdown
 # Spotify plugin for Claude Code
 
 Show the now-playing Spotify track in your statusline and control playback from Claude Code. **macOS only** (uses AppleScript), no login required. Requires the Spotify desktop app and `jq`.
@@ -55,4 +54,3 @@ If `${CLAUDE_PLUGIN_ROOT}` doesn't expand in your statusline context, use the ab
 ## Scope
 
 Phase 1: AppleScript, macOS, no auth. Later: Spotify Web API (search, recommendations, queue, cross-device), MCP server for conversational control.
-````

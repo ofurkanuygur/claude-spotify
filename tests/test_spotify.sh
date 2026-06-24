@@ -38,5 +38,10 @@ IFS=$'\t' read -r e c < <(appearance playing "$tmp")
 check "active emoji" "$e" "🎯"
 check "active color" "$c" "34"
 
+# AppleScript escaping (C1: prevents play-track URI injection → RCE)
+check "esc quote"     "$(applescript_escape 'a"b')" 'a\"b'
+check "esc backslash" "$(applescript_escape 'a\b')" 'a\\b'
+check "esc injection" "$(applescript_escape 'x" & (do shell script "id") & "')" 'x\" & (do shell script \"id\") & \"'
+
 rm -f "$tmp"
 [ "$fail" = 0 ] && echo "ALL PASS" || { echo "SOME FAILED"; exit 1; }
