@@ -2,6 +2,13 @@
 
 Show the now-playing Spotify track in your statusline and control playback from Claude Code. **macOS only** (uses AppleScript), no login required. Requires the Spotify desktop app and `jq`.
 
+## Features
+
+- 🎵 Now-playing track (artist – title) in your Claude Code statusline, colored by the active mode
+- ⏯️ Control playback from chat: `/spotify next`, `prev`, `toggle`, `play <uri>`, `vol`
+- 🎯 Named modes — one command plays a playlist, sets its volume, and recolors the statusline
+- 🔒 No login, no tokens, no network — pure local AppleScript
+
 ## Install
 
 ```
@@ -54,3 +61,7 @@ If `${CLAUDE_PLUGIN_ROOT}` doesn't expand in your statusline context, use the ab
 ## Scope
 
 Phase 1: AppleScript, macOS, no auth. Later: Spotify Web API (search, recommendations, queue, cross-device), MCP server for conversational control.
+
+## License
+
+MIT © Oktay Furkan Uygur
