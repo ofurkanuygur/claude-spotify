@@ -1,10 +1,10 @@
 ---
-description: Spotify'ı kontrol et (next, prev, toggle, play <uri>, mode <ad>, vol <0-100>, status)
-argument-hint: "[next|prev|toggle|play <uri>|mode <ad>|vol <0-100>|status]"
+description: Control Spotify (next, prev, toggle, play <uri>, mode <name>, vol <0-100>, status)
+argument-hint: "[next|prev|toggle|play <uri>|mode <name>|vol <0-100>|status]"
 ---
 
-Spotify kontrol komutu çalıştırıldı. Çıktı:
+Ran the Spotify control command. Output:
 
 !`bash "${CLAUDE_PLUGIN_ROOT}/bin/spotify.sh" $ARGUMENTS`
 
-Yukarıdaki çıktıyı kullanıcıya kısaca ilet; ekstra yorum yapma.
+Relay the output above to the user briefly; don't add commentary.
