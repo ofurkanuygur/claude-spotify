@@ -1,9 +1,12 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "spotify",
+  "displayName": "Spotify",
   "description": "Control Spotify and show now-playing in the statusline (macOS, AppleScript).",
   "version": "0.1.0",
   "author": { "name": "Oktay Furkan Uygur" },
   "homepage": "https://github.com/ofurkanuygur/claude-spotify",
   "repository": "https://github.com/ofurkanuygur/claude-spotify",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": ["spotify", "music", "statusline", "now-playing", "playback-control", "macos", "applescript"]
 }
