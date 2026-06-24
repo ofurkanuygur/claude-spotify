@@ -1,7 +1,10 @@
 {
   "version": "1",
-  "name": "Oktay's Plugins",
+  "name": "ofurkanuygur-plugins",
   "description": "Personal Claude Code plugins",
+  "owner": {
+    "name": "Oktay Furkan Uygur"
+  },
   "plugins": [
     {
       "name": "spotify",
